@@ -1,0 +1,5 @@
+.navbar-brand > img {
+    height: 100%;
+    float: left;
+    margin-right: 5px;
+}
