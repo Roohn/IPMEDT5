@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKlantTable extends Migration
+class CreateCustomersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateKlantTable extends Migration
      */
      public function up()
      {
-       Schema::create('klant', function (Blueprint $table) {
-           $table->increments('klantnr');
-           $table->integer('tafelnr');
+       Schema::create('customers', function (Blueprint $table) {
+           $table->increments('id');
+           $table->integer('tablenr');
            $table->rememberToken();
            $table->timestamps();
        });
@@ -28,6 +28,6 @@ class CreateKlantTable extends Migration
       */
      public function down()
      {
-         Schema::dropIfExists('klant');
+         Schema::dropIfExists('customers');
      }
 }

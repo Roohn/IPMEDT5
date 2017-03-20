@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBestellingenTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,17 @@ class CreateBestellingenTable extends Migration
      */
      public function up()
      {
-       Schema::create('bestellingen', function (Blueprint $table) {
-           $table->engine = 'InnoDB';
-           $table->increments('bestellingnr');
+       Schema::create('orders', function (Blueprint $table) {
+           $table->increments('id');
            $table->string('status');
-           $table->DateTime('besteld_op');
-           $table->integer('klantnr_fk')->unsigned();
+           $table->DateTime('ordered_on');
+           $table->integer('customer_id')->unsigned();
            $table->rememberToken();
            $table->timestamps();
        });
-       Schema::table('bestellingen', function(Blueprint $table)
+       Schema::table('orders', function(Blueprint $table)
         {
-            $table->foreign('klantnr_fk')->references('klantnr')->on('klant')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
         });
      }
 
@@ -35,6 +34,6 @@ class CreateBestellingenTable extends Migration
       */
      public function down()
      {
-         Schema::dropfExists('bestellingen');
+         Schema::dropfExists('orders');
      }
 }
