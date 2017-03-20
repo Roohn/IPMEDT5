@@ -3,3 +3,10 @@
     float: left;
     margin-right: 5px;
 }
+
+.besteld {
+  background-color: red !important;
+}
+.bezorgd {
+  background-color: green !important;
+}
