@@ -21,26 +21,37 @@ function getBestellingen() {
 
               //haal alle informatie op uit de array
               $.each(data, function(key, value) {
-                orderid = value.id;
-                status = value.status;
-                var name = [];
-                var price = [];
-                var category = [];
-                $.each(value.products, function(key, value) {
-                   name.push(value.name);
-                   price.push(value.price);
-                   category.push(value.category);
-                 });
+                tafelnr = value.id;
+                $.each(value.orders, function(key, value) {
+                  orderid = value.id;
+                  status = value.status;
+                  ordered_on = value.ordered_on;
+                  var name = [];
+                  var price = [];
+                  var category = [];
+                  $.each(value.products, function(key, value) {
+                     name.push(value.name);
+                     price.push(value.price);
+                     category.push(value.category);
+                   });
 
-                //maak een 'tabel' voor elke order
-                $('.row').append('<div class="col-md-3"><div class="panel panel-default" id="panel-'+orderid+'"><div class="panel-heading '+status+'">Tafel #... Bestelling: '+orderid+'</div></div></div>');
+                  //maak een 'tabel' voor elke order
+                  if ($("#panel-"+tafelnr).length == 0) {
+                    $('.row').append('<div class="col-md-3"><div class="panel panel-default" id="panel-'+tafelnr+'"><div class="panel-heading '+status+'">Tafel # '+tafelnr+' Bestelling: '+orderid+'</div></div></div>');
+                  }
+                  else {
+                    $('#panel-'+tafelnr).append('<div class="panel-heading '+status+'">Bestelling: '+orderid+'</div>');
+                  }
 
-                //vul de order met producten (bestellingen)
-                for (var x in name) {
-                  $('#panel-' + orderid).append('<div class="panel-body">Bestelling: '+ name[x] +'</div>');
-                  $('#panel-' + orderid).append('<div class="panel-body">Category: '+ category[x] +'</div>');
-                  $('#panel-' + orderid).append('<div class="panel-body">-------------------------</div>');
-                }
+                  //vul de order met producten (bestellingen)
+                  for (var x in name) {
+                    $('#panel-' + tafelnr).append('<div class="panel-body">Bestelling: '+ name[x] +'</div>');
+                    $('#panel-' + tafelnr).append('<div class="panel-body">Category: '+ category[x] +'</div>');
+                    $('#panel-' + tafelnr).append('<div class="panel-body">-------------------------</div>');
+                  }
+                  $('#panel-' + tafelnr).append('<div class="panel-body">Tijd: '+ ordered_on +'</div>');
+
+                });
               });
             } else {
               console.log('Nothing in the DB');

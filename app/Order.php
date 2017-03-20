@@ -10,4 +10,8 @@ class Order extends Model
   public function products() {
     return $this->belongsToMany('App\Product');
   }
+
+  public function customers() {
+    return $this->hasOne('App\Customer');
+  }
 }
