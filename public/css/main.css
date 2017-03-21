@@ -5,8 +5,12 @@
 }
 
 .besteld {
-  background-color: red !important;
+  background-color: #8a0000 !important;
 }
 .bezorgd {
   background-color: green !important;
+}
+
+.checks {
+  height: 30px;
 }

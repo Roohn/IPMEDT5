@@ -17,8 +17,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/test', 'HomeController@debug');
+Route::get('/changeToDone', 'OrderController@changeToDone');
 
-Route::get('/bestellingen', 'OrderController@getBestellingen');
-
-Route::get('/reciepts/{ordernr}', 'OrderController@getRecieptsFromOrder');
+Route::get('/changeToDo', 'OrderController@changeToDo');

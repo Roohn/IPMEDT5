@@ -9,11 +9,17 @@ use App\Product;
 use App\Customer;
 class OrderController extends Controller
 {
-  public function getBestellingen()
-  {
-    $array = array();
-    $products = Customer::with('orders.products')->get();
+    public function changeToDone(Request $request) {
+      $id = $request->input('statusID');
+      $order = Order::find($id);
+      $order->status = 'bezorgd';
+      $order->save();
+    }
 
-    return $products;
-  }
+    public function changeToDo(Request $request) {
+      $id = $request->input('statusID');
+      $order = Order::find($id);
+      $order->status = 'besteld';
+      $order->save();
+    }
 }

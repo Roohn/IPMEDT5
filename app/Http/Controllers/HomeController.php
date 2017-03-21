@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Order;
+use App\Product;
+use App\Customer;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $array = array();
+        $products = Customer::with('orders.products')->get();
+        return view('home')->with('products', $products);
     }
 
 }
