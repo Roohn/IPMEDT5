@@ -7,10 +7,32 @@
 .besteld {
   background-color: #8a0000 !important;
 }
-.bezorgd {
+.gemaakt {
   background-color: green !important;
 }
 
 .checks {
   height: 30px;
+}
+
+.ober-gemaakt {
+  background-color: #8a0000 !important;
+}
+
+.ober-bezorgd {
+  background-color: green !important;
+}
+p {
+    float: right;
+    margin-top: 9px;
+    color: white;
+    text-transform: capitalize;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.btn-add {
+  float:right;
 }

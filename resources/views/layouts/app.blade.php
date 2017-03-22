@@ -46,6 +46,12 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         &nbsp;
+                        @if (Auth::user())
+                          <li><a href="/">Keuken</a></li>
+                          <li><a href="/ober">Ober</a></li>
+                          <li><a href="/product">Menu</a></li>
+                        @endif
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

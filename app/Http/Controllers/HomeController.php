@@ -26,9 +26,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $array = array();
         $products = Customer::with('orders.products')->get();
         return view('home')->with('products', $products);
+    }
+
+    public function ober()
+    {
+        $products = Customer::with('orders.products')->get();
+        return view('ober')->with('products', $products);
+    }
+
+    public function product()
+    {
+      $products = Product::all();
+      return view('product')->with('products', $products);
     }
 
 }

@@ -10,14 +10,14 @@
             Tafel #{{$product->id}} <!-- tafelnr -->
           </div>
           @foreach($product->orders as $orders)
-            @if($orders->status != 'bezorgd')
+            @if($orders->status != 'besteld')
               <!-- alle bestellingen per tafel -->
-              <div class="panel-heading {{$orders->status}}">
+              <div class="panel-heading ober-{{$orders->status}}">
                 <!-- toggle status -->
-                @if($orders->status == 'besteld')
-                  <button type="button" class="btn btn-default" data-statusId="{{$orders->id}}" onclick="changeToReady(this)"><img class="checks" src="img/todo.png"/></button>
+                @if($orders->status == 'gemaakt')
+                  <button type="button" class="btn btn-default" data-statusId="{{$orders->id}}" onclick="changeToDone(this)"><img class="checks" src="img/todo.png"/></button>
                 @else
-                  <button type="button" class="btn btn-default" data-statusId="{{$orders->id}}" onclick="changeToToDo(this)"><img class="checks" src="img/done.png"/></button>
+                  <button type="button" class="btn btn-default" data-statusId="{{$orders->id}}" onclick="changeToReady(this)"><img class="checks" src="img/done.png"/></button>
                 @endif
                 <p>{{$orders->status}}</p>
               </div>
