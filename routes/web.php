@@ -28,3 +28,4 @@ Route::get('/changeToToDo', 'OrderController@changeToToDo');
 Route::get('/changeToDone', 'OrderController@changeToDone');
 
 Route::post('/addproduct', 'ProductController@addproduct');
+Route::get('/delete/{id}', 'ProductController@delete');

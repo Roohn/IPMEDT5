@@ -14,7 +14,7 @@
                 Product: {{$product->name}} <br>
                 Prijs: {{$product->price}} euro
               </div>
-              <div class="panel-footer"><a href="/aanpassen/{{$product->id}}"><button class="btn btn-default btn-aanpassen">Aanpassen</button></a></div>
+              <div class="panel-footer"><a href="/delete/{{$product->id}}"><button class="btn btn-danger">Verwijderen</button></a></div>
             @endif
           @endforeach
         </div>
@@ -30,7 +30,7 @@
                 Product: {{$product->name}} <br>
                 Prijs: {{$product->price}} euro
               </div>
-              <div class="panel-footer"><a href="/aanpassen/{{$product->id}}"><button class="btn btn-default btn-aanpassen">Aanpassen</button></a></div>
+              <div class="panel-footer"><a href="/delete/{{$product->id}}"><button class="btn btn-danger">Verwijderen</button></a></div>
             @endif
           @endforeach
         </div>
@@ -46,7 +46,7 @@
                 Product: {{$product->name}} <br>
                 Prijs: {{$product->price}} euro
               </div>
-              <div class="panel-footer"><a href="/aanpassen/{{$product->id}}"><button class="btn btn-default btn-aanpassen">Aanpassen</button></a></div>
+              <div class="panel-footer"><a href="/delete/{{$product->id}}"><button class="btn btn-danger">Verwijderen</button></a></div>
             @endif
           @endforeach
         </div>
@@ -62,7 +62,7 @@
               Product: {{$product->name}} <br>
               Prijs: {{$product->price}} euro
             </div>
-            <div class="panel-footer"><a href="/aanpassen/{{$product->id}}"><button class="btn btn-default btn-aanpassen">Aanpassen</button></a></div>
+            <div class="panel-footer"><a href="/delete/{{$product->id}}"><button class="btn btn-danger">Verwijderen</button></a></div>
           @endif
         @endforeach
       </div>
