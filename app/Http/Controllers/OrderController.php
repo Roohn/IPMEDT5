@@ -20,6 +20,10 @@ class OrderController extends Controller
       $order = Order::find($id);
       $order->status = 'gemaakt';
       $order->save();
+ 
+      $customer = Order::select('customer_id')->where('id', '=', $id)->get();
+
+      $output = exec("python /home/pi/python_ipmedt5/sendConfirm.py $customer");
     }
     public function changeToDone(Request $request) {
       $id = $request->input('statusID');
