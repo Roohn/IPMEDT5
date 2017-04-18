@@ -26,3 +26,5 @@ Route::get('/changeToDone', 'OrderController@changeToDone');
 Route::post('/addproduct', 'ProductController@addproduct');
 
 Route::get('/delete/{id}', 'ProductController@delete');
+
+Route::post('/scanRFID', 'ProductController@scan');

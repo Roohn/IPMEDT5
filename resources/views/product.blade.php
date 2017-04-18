@@ -83,6 +83,15 @@
           <!-- nodig voor laravel -->
           {{ csrf_field() }}
 
+	  <div class="form-group">
+            <label for="id" class="col-sm-2 control-label">ID</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" name="id" id="id" placeholder="0">
+            </div>
+	    <div class="col-sm-2">
+              <a href="/scanRFID" class="btn btn-default">Scan RFID</a>
+            </div>
+          </div>
           <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Naam</label>
             <div class="col-sm-10">
