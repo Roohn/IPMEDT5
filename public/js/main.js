@@ -5,23 +5,6 @@ $(document).ready(function() {
   });
 });
 
-function changeToReady(id) {
-  statusID = id.getAttribute('data-statusId');
-
-  $.ajaxSetup({
-          headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-      });
-
-  $.ajax({
-      type: "GET",
-      url: '/changeToReady',
-      data: {statusID: statusID},
-      success: function( msg ) {
-        location.reload();
-      }
-  });
-}
-
 function changeToToDo(id) {
   statusID = id.getAttribute('data-statusId');
 

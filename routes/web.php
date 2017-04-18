@@ -17,15 +17,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/ober', 'HomeController@ober');
-
 Route::get('/product', 'HomeController@product');
-
-Route::get('/changeToReady', 'OrderController@changeToReady');
 
 Route::get('/changeToToDo', 'OrderController@changeToToDo');
 
 Route::get('/changeToDone', 'OrderController@changeToDone');
 
 Route::post('/addproduct', 'ProductController@addproduct');
+
 Route::get('/delete/{id}', 'ProductController@delete');
